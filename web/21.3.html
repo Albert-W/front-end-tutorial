@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        // 页面加载时执行，unload页面卸载
+        window.onload = function () {
+            // 获取box
+            var box = document.getElementById("box");
+            var clicked = function () {
+                alert('我被点击了');
+            }
+            box.onclick = clicked;
+        }
+    </script>
+</head>
+<body>
+<div id="box">这是一个DIV</div>
+</body>
+</html>
