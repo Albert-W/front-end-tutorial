@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Navigator</title>
+</head>
+<body>
+<script>
+    //console.log(navigator.userAgent);
+    // 判断浏览器
+    function getBrowser(){
+        var explorer = navigator.userAgent,browser;
+        if(explorer.indexOf("MSIE")>-1){
+            browser = "IE";
+        }else if(explorer.indexOf("Chrome")>-1){
+            browser = "Chrome";
+        }else if(explorer.indexOf("Opera")>-1){
+            browser = "Opera";
+        }else if(explorer.indexOf("Safari")>-1){
+            browser = "Safari";
+        }
+        return browser;
+    }
+    var browser = getBrowser();
+    console.log("您当前使用的浏览器是："+browser);
+    // 判断终端
+    function isPc(){
+        var userAgentInfo = navigator.userAgent,
+            Agents = ["Andriod","iPhone","symbianOS","windows phone","iPad","iPod"],
+            flag = true,i;
+        console.log(userAgentInfo);
+        for(i=0;i<Agents.length;i++){
+            if(userAgentInfo.indexOf(Agents[i])>-1){
+                flag = false;
+                break;
+            }
+        }
+        return flag;
+    }
+    var isPcs = isPc();
+    console.log(isPcs);
+</script>
+</body>
+</html>

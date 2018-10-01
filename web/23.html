@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .text span{font-weight:bold;color:#f00;}
+        em{font-style:normal;}
+        b{font-weight:normal;}
+    </style>
+</head>
+<body>
+<div>
+    <p class="text">
+        <b id="showcount">您还可以输入</b>
+        <span id="totalbox"><em id="count">30</em>/30</span>
+    </p>
+    <div class="input">
+        <textarea name="" id="text" cols="70" rows="4"></textarea>
+    </div>
+</div>
+<script>
+    // 获取文本框及其他元素
+    var text=document.getElementById("text");
+    var total=30;
+    var count=document.getElementById("count");
+    var showcount=document.getElementById("showcount");
+    var totalbox=document.getElementById("totalbox");
+    // 绑定键盘事件
+    document.onkeyup=function(){
+        // 获取文本框值的长度
+        var len=text.value.length;
+        // 计算可输入的剩余字符
+        var allow=total-len;
+        var overflow=len-total;
+        // 如果allow小于0
+        if(allow<0){
+            showcount.innerHTML="您已超出"+overflow;
+            totalbox.innerHTML='';
+        }else{
+            showcount.innerHTML='您还可以输入';
+            totalbox.innerHTML='<em id="count">'+allow+'</em>/30';
+        }
+    }
+</script>
+</body>
+</html>

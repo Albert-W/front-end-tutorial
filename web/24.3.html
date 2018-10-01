@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //setTimeout("alert('hello')",4000);
+    var fnCall=function(){
+        alert("world");
+    }
+    //setTimeout(fnCall,5000);
+    var timeout1=setTimeout(function(){
+        alert("hello");
+    },2000)
+
+    clearTimeout(timeout1);
+
+</script>
+</body>
+</html>

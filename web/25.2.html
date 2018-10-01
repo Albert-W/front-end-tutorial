@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<input type="button" value="刷新" id="reload">
+<script>
+    /*  setTimeout(function(){
+          //location.href='index6.html';
+          // window.location='index6.html';
+          location.replace("index6.html");//不生成后退按钮
+      },1000)*/
+    document.getElementById("reload").onclick=function(){
+        location.reload(true);//从服务器重新加链
+    }
+
+</script>
+</body>
+</html>
